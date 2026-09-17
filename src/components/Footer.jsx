@@ -2,6 +2,57 @@ import React from 'react';
 import Picture from './Picture';
 import { sysCredit } from '../utils/credits';
 import { analytics } from '../utils/analytics';
+const footerStyles = `
+
+  /* SOCIAL ICONS */
+
+  .social-icons {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 18px;
+  }
+
+  .social-icons a {
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(184, 115, 51, 0.5);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    transition:
+      background 0.3s ease,
+      transform 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  .social-icons svg {
+    width: 18px;
+    height: 18px;
+
+    fill: #B87333;
+
+    transition: fill 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    background: #B87333;
+
+    border-color: #B87333;
+
+    transform: translateY(-2px);
+  }
+
+  .social-icons a:hover svg {
+    fill: #0A0A0A;
+  }
+`;
 
 const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPlan, onSiteVisit }) => {
   return (
