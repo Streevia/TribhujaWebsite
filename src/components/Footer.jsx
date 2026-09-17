@@ -183,6 +183,23 @@ const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPla
         </span>
       </div>
 
+       {/* SOCIAL ICONS */}
+          <div className="social-icons">
+
+            {socialLinks.map((item) => (
+              <a
+                key={item.name}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={item.name}
+                title={item.name}
+              >
+                {item.icon}
+              </a>
+            ))}
+
+          </div>
       <div className="footer-copyright-container" style={{
         position: 'relative',
         zIndex: 1,
