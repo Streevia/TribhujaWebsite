@@ -52,6 +52,68 @@ const footerStyles = `
   .social-icons a:hover svg {
     fill: #0A0A0A;
   }
+   /* ==========================
+     FOOTER PAGE NAVIGATION
+  ========================== */
+
+  .footer-page-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 32px;
+
+    flex-wrap: wrap;
+  }
+
+  .footer-page-links a {
+    position: relative;
+
+    color: rgba(237, 230, 218, 0.65);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+    text-decoration: none;
+
+    padding: 8px 0;
+
+    transition:
+      color 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .footer-page-links a::after {
+    content: '';
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    width: 0;
+    height: 1px;
+
+    background: #B87333;
+
+    transform: translateX(-50%);
+
+    transition: width 0.3s ease;
+  }
+
+  .footer-page-links a:hover {
+    color: #B87333;
+  }
+
+  .footer-page-links a:hover::after {
+    width: 100%;
+  }
+
 `;
 
 const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPlan, onSiteVisit }) => {
@@ -233,7 +295,23 @@ const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPla
           A residence by Zuari Infraworld and Gangothri Infraedge
         </span>
       </div>
+<nav
+            className="footer-page-links"
+            aria-label="Footer navigation"
+          >
+            <Link to="/">
+              Home
+            </Link>
 
+           
+
+            <Link to="/contact">
+              Contact Us
+            </Link>
+          </nav>
+
+
+      
        {/* SOCIAL ICONS */}
           <div className="social-icons">
 
