@@ -1,198 +1,530 @@
-import React from 'react';
-import Picture from './Picture';
-import { motion } from 'framer-motion';
+import React from "react";
+import Picture from "./Picture";
+import { motion } from "framer-motion";
 
 const LocationSection = () => {
-  // Data derived from provided brief
-  const hotspots = [
+  const advantages = [
     {
-      name: 'RGIA Airport',
-      dist: '25 MINS',
-      detail: "Signal-free corridor, No traffic lights between here and the runway."
+      title: "RGIA Airport",
+      value: "25",
+      unit: "MIN",
+      description:
+        "Signal-free corridor. No traffic lights between here and the runway.",
     },
     {
-      name: 'ORR Exit 2',
-      dist: '02 MINS',
-      detail: "Eight lanes. The city’s circulatory system at the doorstep."
+      title: "ORR Exit 2",
+      value: "02",
+      unit: "MIN",
+      description:
+        "Eight lanes. The city's circulatory system at your doorstep.",
     },
     {
-      name: 'Financial District',
-      dist: '10 MINS',
-      detail: "Straight-line corridor to the South. Where the economy clocks in."
+      title: "Financial District",
+      value: "10",
+      unit: "MIN",
+      description:
+        "Straight-line corridor to the South. Where the economy clocks in.",
     },
     {
-      name: 'Cycling Track',
-      dist: '02 MINS',
-      detail: "23 km solar-covered track. Nanakramguda to TSPA and Narsingi to Kollur."
-    }
+      title: "IT Corridor",
+      value: "15",
+      unit: "MIN",
+      description: "Amazon, Microsoft, Google, ISB, Infosys, TCS, Cognizant.",
+    },
+    {
+      title: "Cycling Track",
+      value: "02",
+      unit: "MIN",
+      description:
+        "23 km solar-covered cycling track from Nanakramguda to Kollur.",
+    },
+    {
+      title: "Lifestyle Access",
+      value: "",
+      unit: "",
+      description:
+        "Close to international schools, hospitals and premium malls.",
+    },
   ];
 
   return (
-    <section id="location" style={{ background: '#050505', color: 'var(--cream)', padding: '80px 0' }}>
-      <div className="ps-inner" style={{ maxWidth: '1400px' }}>
-        
-        {/* PANORAMIC GRID */}
-        <div style={{ display: 'grid', gridTemplateColumns: window.innerWidth < 1024 ? '1fr' : '1.2fr 1fr', gap: '60px', alignItems: 'start', marginBottom: '60px' }}>
+    <section
+      id="location"
+      style={{
+        background: "#050505",
+        color: "var(--cream)",
+        padding: "80px 0",
+      }}
+    >
+      <div className="location-container">
+        <div className="location-grid">
+          {/* LEFT COLUMN */}
 
-          {/* COLUMN 1: MAP */}
-          <div className="location-map-wrapper" style={{
-              position: 'relative',
-              background: '#080806',
-              border: '1px solid rgba(184,115,51,0.2)',
-              borderRadius: '2px',
-              overflow: 'hidden',
-            }}>
+          <div>
+            <div className="location-map-wrapper">
               <Picture
                 src="/assets/images/new.webp"
                 mobileSrc="/assets/images/new-mobile.webp"
-                alt="Tribhuja location map — apartments near ORR Exit 2 and Financial District Hyderabad"
+                alt="Tribhuja location map near ORR Exit 2 Hyderabad"
                 width="401"
                 height="598"
-                style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  opacity: 0.85,
+                }}
               />
-              
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, #050505 0%, transparent 20%, transparent 80%, #050505 100%)', pointerEvents: 'none' }} />
-              {/* GET DIRECTIONS BUTTON */}
+
+              <div className="map-overlay" />
+
               <a
                 href="https://maps.app.goo.gl/Qy7tNvFo9GxVnFQp6"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{
-                  position: 'absolute',
-                  bottom: '20px',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  background: 'rgba(184,115,51,0.92)',
-                  color: '#fff',
-                  padding: '10px 22px',
-                  fontSize: '0.68rem',
-                  fontFamily: "'DM Sans', sans-serif",
-                  fontWeight: 600,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.15em',
-                  textDecoration: 'none',
-                  borderRadius: '2px',
-                  whiteSpace: 'nowrap',
-                  backdropFilter: 'blur(8px)',
-                  zIndex: 10
-                }}
+                className="direction-btn"
               >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#fff"/>
+                <svg width="13" height="13" viewBox="0 0 24 24">
+                  <path
+                    fill="#fff"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  />
                 </svg>
-                Get Directions
+                Get Directions →
               </a>
+            </div>
+
+            {/* PROJECT ADDRESS */}
+
+            <div className="project-address">
+              <div className="address-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24">
+                  <path
+                    fill="#B87333"
+                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                  />
+                </svg>
+              </div>
+
+              <div>
+                <h3>Project Address</h3>
+
+                <p>
+                  Tribhuja by Zuari Infraworld &amp; Gangothri Infraedge
+                  <br />
+                  Kollur Village, Near ORR Exit 2,
+                  <br />
+                  Hyderabad, Telangana - 502300, India
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* COLUMN 2: EDITORIAL LIST */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            <div style={{ width: '60px', height: '1px', background: 'rgba(184,115,51,0.6)' }} />
+          {/* RIGHT CONTENT */}
 
-            <h2 className="hl" style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', margin: 0, color: 'var(--cream)' }}>
-              The Kollur
-            </h2>
+          <div className="location-content">
+            <div className="line" />
+
+            <h2 className="hl">The Kollur</h2>
 
             <a
               href="https://maps.app.goo.gl/Qy7tNvFo9GxVnFQp6"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                fontFamily: "'DM Sans', sans-serif",
-                fontSize: '0.7rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.25em',
-                color: '#B87333',
-                fontWeight: 600,
-                textDecoration: 'none',
-                marginTop: '-8px'
-              }}
+              className="location-link"
             >
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#B87333"/>
-              </svg>
-              Kollur, ORR Exit 2, Hyderabad &rarr;
+              Kollur, ORR Exit 2, Hyderabad →
             </a>
 
-            <p style={{ margin: 0, fontFamily: "'DM Sans', sans-serif", fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(240,226,200,0.85)', fontWeight: 300 }}>
+            <p className="intro">
               The neighbourhood was ready before the towers rose.
             </p>
 
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', marginBottom: '8px' }}>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.6rem, 2.6vw, 2rem)', color: 'var(--cream)', lineHeight: 1 }}>500</span>
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', color: '#B87333', fontWeight: 600 }}>FT</span>
-              </div>
-              <p style={{ margin: 0, fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', lineHeight: 1.5, color: 'rgba(240,226,200,0.65)' }}>
-                of frontage on the ORR.
-              </p>
+            <div className="stats-box">
+              <strong>500</strong>
+
+              <span>FT ORR FRONTAGE</span>
             </div>
 
-            {hotspots.map((h, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-              >
-                <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', color: 'var(--cream)', lineHeight: 1.1 }}>{h.name} :</span>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', color: 'var(--cream)', lineHeight: 1.1 }}>{parseInt(h.dist, 10)}</span>
-                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', color: '#B87333', fontWeight: 600 }}>MIN</span>
-                </div>
-                <p style={{ margin: 0, fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', lineHeight: 1.5, color: 'rgba(240,226,200,0.65)' }}>
-                  {h.detail}
-                </p>
-              </motion.div>
-            ))}
+            <div className="advantage-grid">
+              {advantages.map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  className="advantage-card"
+                  initial={{
+                    opacity: 0,
+                    y: 30,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  viewport={{
+                    once: true,
+                  }}
+                  transition={{
+                    delay: index * 0.1,
+                  }}
+                >
+                  <h3>{item.title}</h3>
 
-            <div>
-              <div style={{ display: 'flex', alignItems: 'baseline', gap: '10px', marginBottom: '8px', flexWrap: 'wrap' }}>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', color: 'var(--cream)', lineHeight: 1.1 }}>IT Corridor :</span>
-                <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', color: 'var(--cream)', lineHeight: 1.1 }}>15</span>
-                <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '0.7rem', letterSpacing: '0.2em', color: '#B87333', fontWeight: 600 }}>MIN</span>
-              </div>
-              <p style={{ margin: 0, fontFamily: "'DM Sans', sans-serif", fontSize: '0.85rem', lineHeight: 1.5, color: 'rgba(240,226,200,0.65)' }}>
-                Amazon, Microsoft, Google, ISB,<br />Infosys, TCS, Cognizant.
-              </p>
+                  <div className="distance">
+                    {item.value && (
+                      <>
+                        <span>{item.value}</span>
+
+                        <small>{item.unit}</small>
+                      </>
+                    )}
+                  </div>
+
+                  <p>{item.description}</p>
+                </motion.div>
+              ))}
             </div>
 
-            <p style={{ margin: 0, fontFamily: "'Cormorant Garamond', serif", fontStyle: 'italic', fontSize: '1rem', lineHeight: 1.5, color: '#B87333' }}>
-              Proximity to International Schools,<br />Hospitals and Malls.
-            </p>
-
-            <div style={{ width: '60px', height: '1px', background: 'rgba(184,115,51,0.6)', marginTop: '16px' }} />
+            <div className="bottom-line" />
           </div>
-
         </div>
-
       </div>
 
-      <style dangerouslySetInnerHTML={{ __html: `
-        .location-map-wrapper {
-          min-height: 700px;
-        }
-        @media (max-width: 1024px) {
-          #location .ps-inner { padding: 40px 5vw !important; }
-          .location-map-wrapper {
-            min-height: auto;
-            aspect-ratio: 401 / 598;
-          }
-        }
-        @media (max-width: 768px) {
-          #location div[style*="grid-template-columns: 1fr 1.2fr"] { 
-            grid-template-columns: 1fr !important; 
-            gap: 40px !important; 
-            padding: 30px !important;
-          }
-        }
-      `}} />
+      <style>{`
+
+.location-container{
+max-width:1400px;
+margin:auto;
+padding:0 5vw;
+}
+
+
+.location-grid{
+
+display:grid;
+grid-template-columns:1.1fr 1fr;
+gap:60px;
+
+}
+
+
+.location-map-wrapper{
+
+position:relative;
+min-height:700px;
+
+border:1px solid rgba(184,115,51,.25);
+
+overflow:hidden;
+
+}
+
+
+
+.map-overlay{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(
+to right,
+#050505 0%,
+transparent 25%,
+transparent 75%,
+#050505 100%
+);
+
+}
+
+
+
+.direction-btn{
+
+position:absolute;
+bottom:25px;
+left:50%;
+
+transform:translateX(-50%);
+
+background:#B87333;
+
+color:white;
+
+padding:12px 24px;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+font-size:.7rem;
+
+letter-spacing:.2em;
+
+text-transform:uppercase;
+
+text-decoration:none;
+
+}
+
+
+
+.project-address{
+
+margin-top:25px;
+
+padding:25px;
+
+display:flex;
+
+gap:15px;
+
+border:1px solid rgba(184,115,51,.25);
+
+background:rgba(255,255,255,.02);
+
+}
+
+
+
+.address-icon{
+
+padding-top:5px;
+
+}
+
+
+
+.project-address h3{
+
+margin:0 0 10px;
+
+font-family:'Cormorant Garamond';
+
+font-size:1.5rem;
+
+}
+
+
+
+.project-address p{
+
+margin:0;
+
+font-family:'DM Sans';
+
+font-size:.85rem;
+
+line-height:1.7;
+
+color:rgba(240,226,200,.7);
+
+}
+
+
+
+.location-content{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+
+
+.line,
+.bottom-line{
+
+width:60px;
+height:1px;
+background:#B87333;
+
+}
+
+
+
+.hl{
+
+font-size:clamp(2rem,4vw,2.6rem);
+
+margin:0;
+
+}
+
+
+
+.location-link{
+
+color:#B87333;
+
+font-size:.7rem;
+
+letter-spacing:.25em;
+
+text-transform:uppercase;
+
+text-decoration:none;
+
+}
+
+
+
+.intro{
+
+line-height:1.7;
+
+color:rgba(240,226,200,.85);
+
+}
+
+
+
+.stats-box strong{
+
+font-family:'Cormorant Garamond';
+
+font-size:3rem;
+
+display:block;
+
+}
+
+
+
+.stats-box span{
+
+font-size:.7rem;
+
+letter-spacing:.2em;
+
+color:#B87333;
+
+}
+
+
+
+.advantage-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+}
+
+
+
+.advantage-card{
+
+padding:25px;
+
+border:1px solid rgba(184,115,51,.18);
+
+background:rgba(255,255,255,.02);
+
+transition:.3s;
+
+}
+
+
+
+.advantage-card:hover{
+
+border-color:#B87333;
+
+transform:translateY(-5px);
+
+}
+
+
+
+.advantage-card h3{
+
+font-family:'Cormorant Garamond';
+
+font-size:1.5rem;
+
+margin:0 0 15px;
+
+}
+
+
+
+.distance span{
+
+font-family:'Cormorant Garamond';
+
+font-size:2rem;
+
+}
+
+
+
+.distance small{
+
+color:#B87333;
+
+letter-spacing:.2em;
+
+margin-left:8px;
+
+}
+
+
+
+.advantage-card p{
+
+font-size:.85rem;
+
+line-height:1.6;
+
+color:rgba(240,226,200,.65);
+
+}
+
+
+
+@media(max-width:1024px){
+
+.location-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.location-map-wrapper{
+
+aspect-ratio:401/598;
+
+min-height:auto;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+.advantage-grid{
+
+grid-template-columns:1fr;
+
+}
+
+
+.project-address{
+
+padding:20px;
+
+}
+
+}
+
+`}</style>
     </section>
   );
 };

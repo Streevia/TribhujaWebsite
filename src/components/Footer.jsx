@@ -5,6 +5,39 @@ import { analytics } from '../utils/analytics';
 import RERACompliance, { CONTACT_ADDRESS_FONT_SIZE } from './RERACompliance';
 
 const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPlan, onSiteVisit }) => {
+  const socialLinks = [
+
+{
+name:"Instagram",
+url:"https://www.instagram.com/zuarigangothritribhuja/?hl=en",
+icon:(
+<svg viewBox="0 0 24 24">
+<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2.2a2.8 2.8 0 1 1 0 5.6 2.8 2.8 0 0 1 0-5.6zM18 6.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/>
+</svg>
+)
+},
+
+{
+name:"Facebook",
+url:"https://www.facebook.com/p/Zuari-Gangothri-Tribhuja-61572568545177/",
+icon:(
+<svg viewBox="0 0 24 24">
+<path d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.7.3-1 1-1z"/>
+</svg>
+)
+},
+
+{
+name:"YouTube",
+url:"https://www.youtube.com/channel/UCX-B_mF7mVjX7loup_7gCAA",
+icon:(
+<svg viewBox="0 0 24 24">
+<path d="M23 7s-.2-1.7-.9-2.4C21.3 3.7 20.4 3.7 20 3.6 17.2 3.4 12 3.4 12 3.4s-5.2 0-8 .2c-.4.1-1.3.1-2.1 1C1.2 5.3 1 7 1 7S.8 9 .8 11v2c0 2 .2 4 .2 4s.2 1.7.9 2.4c.8.9 1.8.9 2.2 1 1.6.2 7.9.2 7.9.2s5.2 0 8-.2c.4-.1 1.3-.1 2.1-1 .7-.7.9-2.4.9-2.4s.2-2 .2-4v-2c0-2-.2-4-.2-4zM10 15.5v-7l6 3.5-6 3.5z"/>
+</svg>
+)
+}
+
+];
   return (
     <footer className="site-footer" style={{ 
       position: 'relative', 
@@ -160,6 +193,40 @@ const Footer = ({ onDownloadBrochure, onDownloadPriceSheet, onDownloadPaymentPla
           </button>
         </div>
       </div>
+
+      <nav className="footer-nav">
+<Link to="/">
+HOME
+</Link>
+
+<Link to="/contact">
+CONTACT US
+</Link>
+</nav>
+
+      <div className="footer-socials">
+
+
+{
+socialLinks.map(item=>(
+
+<a
+
+key={item.name}
+
+href={item.url}
+
+target="_blank"
+
+rel="noopener noreferrer"
+  >
+
+{item.icon}
+
+</a>
+))
+}
+</div>
 
       <div style={{
         position: 'relative',
