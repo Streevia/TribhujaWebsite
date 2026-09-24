@@ -11,8 +11,6 @@ import { useHeroFrames } from './hooks/useHeroFrames';
 import Lenis from 'lenis';
 import { analytics } from './utils/analytics';
 import ContactUs from './components/ContactUs';
-import ScrollToTop from './components/ScrollToTop';
-
 import ThankYou from './components/ThankYou';
 
 // Below-the-fold sections — split into their own chunks so the initial
@@ -139,7 +137,7 @@ function App() {
 
   return (
     <>
-      <ScrollToTop />
+      
       <Routes>
       <Route path="/contact" element={<ContactUs />} />
       <Route path="/thank-you" element={
