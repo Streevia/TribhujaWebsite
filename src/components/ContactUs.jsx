@@ -179,7 +179,40 @@ const ContactUs = () => {
             </div>
           </div>
         </section>
-      </main>
+            </main>
+
+      {/* Google Maps Section */}
+      <section className="contact-map-section">
+        <div className="contact-map-header">
+          <span className="contact-kicker">Find us</span>
+          <h2>Visit Tribhuja</h2>
+          <p>
+            Explore our project location in Kollur, Hyderabad.
+          </p>
+        </div>
+
+        <div className="contact-map-wrapper">
+          <iframe
+            title="Tribhuja Project Location"
+            src="https://www.google.com/maps?q=Zuari%20Gangothri%20Tribhuja%20Kollur%20Hyderabad&output=embed"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          ></iframe>
+
+          <a
+            href="https://maps.app.goo.gl/9kwAoTL4nwB2uPcA8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-map-link"
+            onClick={() =>
+              analytics.trackButtonClick('View Location on Google Maps', 'Contact Page')
+            }
+          >
+            Open in Google Maps ↗
+          </a>
+        </div>
+      </section>
 
       <Footer showCtas={false} />
       <style>{contactStyles}</style>
@@ -220,8 +253,99 @@ const contactStyles = `
   .contact-form button:disabled{opacity:.6;cursor:not-allowed;}
   .contact-error{padding:12px 14px;border:1px solid rgba(210,90,70,.4);color:#e7a091;background:rgba(210,90,70,.08);font-size:.8rem;line-height:1.5;}
   .contact-consent{margin:0;color:rgba(237,230,218,.32);font-size:.68rem;line-height:1.6;}
+    .contact-map-section{
+    padding:100px 0 0;
+    background:#080806;
+    border-top:1px solid rgba(184,115,51,.14);
+  }
+
+  .contact-map-header{
+    width:min(1240px,calc(100% - 56px));
+    margin:0 auto 45px;
+    text-align:center;
+  }
+
+  .contact-map-header h2{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;
+    font-size:clamp(2.8rem,5vw,4.8rem);
+    line-height:1;
+    margin:0 0 18px;
+    color:#EDE6DA;
+  }
+
+  .contact-map-header p{
+    color:rgba(237,230,218,.5);
+    line-height:1.8;
+    margin:0 auto;
+    max-width:600px;
+  }
+
+  .contact-map-wrapper{
+    position:relative;
+    width:100%;
+    height:500px;
+    overflow:hidden;
+    border-top:1px solid rgba(184,115,51,.18);
+    border-bottom:1px solid rgba(184,115,51,.18);
+  }
+
+  .contact-map-wrapper iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+    filter:grayscale(.35) contrast(.95);
+  }
+
+  .contact-map-link{
+    position:absolute;
+    right:28px;
+    bottom:28px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 22px;
+    background:#B87333;
+    color:#080806;
+    text-decoration:none;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    font-size:.65rem;
+    font-weight:700;
+    transition:.3s ease;
+  }
+
+  .contact-map-link:hover{
+    background:#080806;
+    color:#B87333;
+    border:1px solid #B87333;
+  }
+
+  @media(max-width:640px){
+    .contact-map-section{
+      padding-top:70px;
+    }
+
+    .contact-map-header{
+      width:min(100% - 36px,1240px);
+      margin-bottom:30px;
+    }
+
+    .contact-map-wrapper{
+      height:400px;
+    }
+
+    .contact-map-link{
+      left:18px;
+      right:18px;
+      bottom:18px;
+      text-align:center;
+    }
+  }
   @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:60px}.contact-content{padding:75px 0}.contact-hero{padding:150px 0 75px}}
   @media(max-width:640px){.contact-container{width:min(100% - 36px,1240px)}.contact-form-panel{padding:28px 20px}.contact-field-row{grid-template-columns:1fr}.contact-info-list>a,.contact-info-list>div{align-items:flex-start;flex-direction:column;gap:8px}.contact-info-list strong{text-align:left}.contact-hero{padding:130px 0 65px}.contact-back{margin-bottom:40px}}
+  
 `;
 
 export default ContactUs;
