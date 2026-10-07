@@ -20,12 +20,30 @@ const ParallaxItem = ({ item, i }) => {
   else if (i > 3) height = '50vh';
 
   const handleClick = () => {
-    if (item.category) {
-      window.dispatchEvent(new CustomEvent('scroll-to-explorer', {
-        detail: { category: item.category }
-      }));
-    }
+  if (!item.category) return;
+
+  const categoryMap = {
+    clubhouse: 'clubhouse',
+    outdoor: 'outdoor',
+    terrace: 'terrace',
+    home: 'home',
   };
+
+  const targetCategory = categoryMap[item.category];
+
+  if (!targetCategory) {
+    console.warn('Unknown amenity category:', item.category);
+    return;
+  }
+
+  window.dispatchEvent(
+    new CustomEvent('scroll-to-explorer', {
+      detail: {
+        category: targetCategory,
+      },
+    })
+  );
+};
 
   return (
     <motion.div
