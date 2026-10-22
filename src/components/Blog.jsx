@@ -12,7 +12,7 @@ const posts = [
     title: 'Flats for Sale in Kollur: Complete Home Buyer’s Guide (2026)',
     excerpt:
       'Explore this complete buyer’s guide to flats in Kollur, including connectivity, apartment configurations, pricing, RERA verification and amenities.',
-    image: '/tribhuja-react/assets/images/guide-2026.webp',
+    image: '/assets/images/guide-2026.webp',
     date: 'October 2026',
   },
   {
@@ -21,7 +21,7 @@ const posts = [
     title: "10 Reasons Kollur Is Becoming Hyderabad's Next Residential Hotspot",
     excerpt:
       'Discover how ORR connectivity, employment hubs, expanding residential communities and planned infrastructure are shaping Kollur’s residential appeal.',
-    image: '/tribhuja-react/assets/images/kollur-reasons.webp',
+    image: '/assets/images/kollur-reasons.webp',
     date: 'October 2026',
   },
 ];
