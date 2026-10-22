@@ -549,7 +549,7 @@ const BlogDetail = () => {
 
         <article className="detail-article">
           <div className="detail-copy">
-            <nav className="detail-toc" aria-label="Table of contents">
+            <div className="detail-toc" aria-label="Table of contents">
               <h2>Table of Contents</h2>
 
               <ol>
@@ -561,7 +561,7 @@ const BlogDetail = () => {
                   </li>
                 ))}
               </ol>
-            </nav>
+            </div>
 
             {post.sections.map((section, index) => (
               <section

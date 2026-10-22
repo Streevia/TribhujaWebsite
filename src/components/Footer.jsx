@@ -195,7 +195,7 @@ icon:(
         </div>
       </div>
 
-      <nav className="footer-nav">
+      <div className="footer-nav">
 <Link to="/">
 HOME
 </Link>
@@ -207,7 +207,7 @@ Blog
 <Link to="/contact">
 CONTACT US
 </Link>
-</nav>
+</div>
 
       <div className="footer-socials">
 
