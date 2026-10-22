@@ -428,6 +428,7 @@ const pageStyles = `
     }
   }
 
+ 
   @media (max-width: 640px) {
     .editorial-container {
       width: calc(100% - 36px);
@@ -467,6 +468,7 @@ const pageStyles = `
       width: 100%;
     }
   }
-;
+`;
 
 export default Blog;
+
