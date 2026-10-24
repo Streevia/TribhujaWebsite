@@ -4,7 +4,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { analytics } from '../utils/analytics';
 
-const LEAD_API_URL = 'https://zuari.my.salesforce-sites.com/services/apexrest/WebsiteLead/';
+const LEAD_API_URL = '/api/lead';
 
 const ContactUs = () => {
   const navigate = useNavigate();

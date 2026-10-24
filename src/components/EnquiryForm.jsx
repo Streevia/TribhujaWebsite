@@ -4,7 +4,7 @@ import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { analytics, trackEvent } from '../utils/analytics';
 
-const LEAD_API_URL = 'https://zuari.my.salesforce-sites.com/services/apexrest/WebsiteLead/';
+const LEAD_API_URL = '/api/lead';
 const PROJECT_NAME = 'Zuari Gangothri Tribhuja';
 const LEAD_SOURCE = 'Website';
 const LEAD_STORAGE_KEY = 'tribhuja_lead_submitted';

@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/api/lead",
+      "destination": "https://zuari.my.salesforce-sites.com/services/apexrest/WebsiteLead/"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
