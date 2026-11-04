@@ -24,6 +24,22 @@ const posts = [
     image: '/assets/images/kollur-reasons.webp',
     date: 'October 2026',
   },
+  {
+    slug: 'best-3-4-bhk-flats-in-west-hyderabad-why-it-stands-out',
+    category: 'Home Buyer Guide',
+    title: 'Best 3 & 4 BHK Flats for Sale in Hyderabad: Why West Hyderabad Leads',
+    excerpt: 'Explore why West Hyderabad leads demand for 3 and 4 BHK homes, with connectivity, modern amenities and lifestyle benefits.',
+    image: '/assets/images/west-hyderabad-leads.webp',
+    date: 'October 2026',
+  },
+  {
+    slug: 'gated-communities-vs-apartments-in-kollur-which-is-better',
+    category: 'Community Living',
+    title: 'Gated Communities in Kollur vs Standalone Apartments: Which Is Better?',
+    excerpt: 'Compare gated communities and standalone apartments in Kollur, from amenities and security to privacy and everyday convenience.',
+    image: '/assets/images/gated-communities.webp',
+    date: 'October 2026',
+  },
 ];
 
 const Blog = () => {
@@ -467,6 +483,6 @@ const pageStyles = `
       width: 100%;
     }
   }
-;
+`;
 
 export default Blog;
