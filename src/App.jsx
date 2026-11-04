@@ -41,6 +41,16 @@ function App() {
   const [enquiryType, setEnquiryType] = useState('general'); // 'general' | 'brochure'
   const location = useLocation();
 
+  // Start every newly opened route at its top, including when Lenis is active.
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+    if (window.lenis) {
+      window.lenis.scrollTo(0, { immediate: true, force: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [location.pathname]);
+
   // Initialize scroll reveal animations
   useScrollReveal();
 
