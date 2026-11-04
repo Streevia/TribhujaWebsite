@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { analytics } from '../utils/analytics';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isSolid, setIsSolid] = useState(false);
@@ -104,6 +104,22 @@ const Navbar = () => {
           />
         </picture>
       </div>
+      <div className="header-nav" aria-label="Main navigation">
+        <Link to="/" aria-current={location.pathname === '/' ? 'page' : undefined}>Home</Link>
+        <Link to="/blog" aria-current={location.pathname.startsWith('/blog') ? 'page' : undefined}>Blog</Link>
+        <Link to="/contact" aria-current={location.pathname === '/contact' ? 'page' : undefined}>Contact</Link>
+      </div>
+      <style>{`
+        .header-nav { display:flex; align-items:center; gap:clamp(16px, 3vw, 42px); margin-left:auto; padding-left:24px; }
+        .header-nav a { color:rgba(237,230,218,.72); text-decoration:none; text-transform:uppercase; letter-spacing:.18em; font:500 .68rem 'DM Sans',sans-serif; transition:color .25s ease; }
+        .header-nav a:hover, .header-nav a[aria-current="page"] { color:#D69A60; }
+        @media (max-width:600px) {
+          nav { padding:0 18px; }
+          .nb { transform:scale(.78); transform-origin:left center; }
+          .header-nav { gap:12px; padding-left:4px; }
+          .header-nav a { font-size:.56rem; letter-spacing:.08em; }
+        }
+      `}</style>
     </nav>
   );
 };
