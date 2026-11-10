@@ -37,7 +37,7 @@ const RERACompliance = ({ variant = 'block' }) => {
         ...(isBadge
           ? {
               position: 'absolute',
-              top: '12px',
+              top: '100px',
               right: '12px',
               zIndex: 20,
             }
