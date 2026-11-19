@@ -7,6 +7,22 @@ import Picture from './Picture';
 
 const posts = [
   {
+    slug: 'hyderabad-real-estate-trends-2026-why-kollur-stands-out',
+    category: 'Market Trends',
+    title: '2026 Hyderabad Real Estate Trends: Why Buyers Are Moving Toward Kollur',
+    excerpt: 'Explore Hyderabad’s 2026 property trends and why Kollur is drawing homebuyers with West Hyderabad connectivity, evolving supply and premium homes.',
+    image: '/assets/images/hyderabad-real-estate-trends-2026.jpg',
+    date: 'November 2026',
+  },
+  {
+    slug: 'why-families-choose-kollur-for-better-living',
+    category: 'Family Living',
+    title: 'Top Reasons Families Prefer Kollur Over Other Hyderabad Locations',
+    excerpt: 'From schools and healthcare to open spaces and road access, discover what makes Kollur worth considering for family life in Hyderabad.',
+    image: '/assets/images/kollur-family-living.jpg',
+    date: 'November 2026',
+  },
+  {
     slug: 'flats-for-sale-in-kollur-complete-buyer-guide-2026',
     category: 'Home Buyer Guide',
     title: 'Flats for Sale in Kollur: Complete Home Buyer’s Guide (2026)',
